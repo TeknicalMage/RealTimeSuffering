@@ -31,6 +31,8 @@ public class Click2 : MonoBehaviour {
 
                     }
                         
+                }else if(hit.transform.name == "PRNT"){
+                    print("Hit");
                 }
             }
         }

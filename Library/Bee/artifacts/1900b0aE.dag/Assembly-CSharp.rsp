@@ -371,6 +371,7 @@
 "Assets/Scripts/Click2.cs"
 "Assets/Scripts/Dragger.cs"
 "Assets/Scripts/Geotherm.cs"
+"Assets/Scripts/Menu/MenuClick.cs"
 "Assets/Scripts/MoneyResource.cs"
 "Assets/Scripts/MoneyTile.cs"
 "Assets/Scripts/ObjectResource.cs"
