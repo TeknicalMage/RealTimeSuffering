@@ -51,9 +51,6 @@ public class Tile : MonoBehaviour
     
 
 
-    IEnumerator Test(){
-        yield return new WaitForSeconds (5);
-    }
 
     private void OnTriggerEnter2D (Collider2D collider){
         string val = (collider.gameObject.name);
@@ -89,9 +86,9 @@ public class Tile : MonoBehaviour
         obj = GameObject.Find(val);
         string tile_type = (this.name);
         if(forest == true){
-            cam.GetComponent<Resource>().addmoney (500);
+            cam.GetComponent<Resource>().addmoney (0);
         }else if(metals == true){
-            cam.GetComponent<Resource>().addmoney (500);
+            cam.GetComponent<Resource>().addmoney (0);
         }
         
     }

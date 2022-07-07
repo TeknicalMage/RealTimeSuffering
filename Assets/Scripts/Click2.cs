@@ -28,6 +28,7 @@ public class Click2 : MonoBehaviour {
                     if(cam.GetComponent<Resource>().money > 500){
                         cam.GetComponent<Resource>().subtractmoney (500); 
                         Instantiate(spawnee, spawnpos.position, spawnpos.rotation);
+                        cam.GetComponent<countdown>().showtime();
 
                     }
                         

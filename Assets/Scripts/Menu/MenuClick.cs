@@ -14,6 +14,8 @@ public class MenuClick : MonoBehaviour {
     public Transform spawnpos;
     public GameObject spawnee;
     public GameObject cam;
+
+    
     
 
     void Update()
@@ -27,14 +29,26 @@ public class MenuClick : MonoBehaviour {
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.transform.name == "PRNT" ){
                     print("ok");
-                    SceneManager.LoadScene("MapFull");
+                    //SceneManager.LoadScene("MapFull");
                     
-                    
-                        
                 }else if(hit.transform.name == "x4"){
                     print("Hit");
                 }
             }
         }
     }
+    void OnMouseOver(){
+        this.GetComponent<SpriteRenderer>().color = Color.blue;;
+    }
+    
+    void OnMouseExit(){
+        this.GetComponent<SpriteRenderer>().color = Color.red;;
+        //Outline.SetActive(false);
+
+    }
+
+    
+
+
+
 }

@@ -16,6 +16,8 @@ public class SolarField : MonoBehaviour
 
     void Start(){
         //this.GetComponent<Collider2D>().enabled = true;
+        solar = false;
+        StartCoroutine("i2");
     }
 
   
@@ -38,6 +40,8 @@ public class SolarField : MonoBehaviour
 
     }   
 
+  
+
     private void OnTriggerStay2D(Collider2D collider){
         this.GetComponent<Collider2D>().enabled = true;
         
@@ -51,9 +55,50 @@ public class SolarField : MonoBehaviour
 
 
         if ((collider.gameObject.name == hitlocation) && (hitlocation.Contains("Square") != true)){
-            obj.transform.position = linePos;      
-            cam.GetComponent<Resource>().addpower (500);             
+            obj.transform.position = linePos;
+            solar = true;         
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider){
+        solar = false;
+    }
+
+    private IEnumerator i2(){
+        print("ok");
+
+        while(true){
+            if(solar){
+                yield return new WaitForSeconds(1);
+                print("WaitAndPrint " + Time.time);
+                cam.GetComponent<Resource>().addpower (100);
+            }
+            else if (!solar){
+                //cam.GetComponent<Resource>().addpower (0);
+                yield return new WaitForSeconds(1);
+                print(Time.time);
+            }
+        }
+
+        
+
+        
+
+    }
+
+
+
+    void Update()
+    {
+        if (solar == true){
+            print("On");
+            
+        }
+        else if(solar == false){
+            print("Off"); 
+        }
+        
+        
     }
     
 
