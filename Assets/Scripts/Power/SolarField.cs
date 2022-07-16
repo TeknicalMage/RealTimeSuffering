@@ -91,11 +91,11 @@ public class SolarField : MonoBehaviour
     void Update()
     {
         if (solar == true){
-            print("On");
+            //print("On");
             
         }
         else if(solar == false){
-            print("Off"); 
+            //print("Off"); 
         }
         
         
